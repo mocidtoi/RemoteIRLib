@@ -1,0 +1,33 @@
+<plugin 
+	id="com.thanhnv.remoteirlib" 
+version="0.1.25"
+	xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>RemoteIRLib</name>
+	
+	<js-module 
+		name="RemoteIRLib" 
+		src="www/RemoteIRLib.js">
+		<clobbers target="RemoteIRLib" />
+	</js-module>
+
+	<platform name="android">
+		<hook type="after_plugin_add" src="scripts/android/ApplicationContext.js" />
+
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="RemoteIRLib">
+				<param name="android-package" value="com.thanhnv.remoteirlib.RemoteIRLib" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		</config-file>
+
+		<source-file src="src/android/RemoteIRLib.java" target-dir="src/com/thanhnv/remoteirlib/RemoteIRLib" />
+		<source-file src="src/android/jingxun.jar" target-dir="libs" framework="true" />
+		<source-file src="src/android/netty.jar" target-dir="libs" framework="true" />
+	</platform>
+</plugin>

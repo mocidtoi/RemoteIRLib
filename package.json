@@ -1,0 +1,17 @@
+{
+"version":"0.1.25",
+	"name":"com.thanhnv.remoteirlib",
+	"cordova_name":"RemoteIRLib",
+	"description": "Remote ir lib",
+	"license":"Apache 2.4",
+	"repo":"",
+	"issue":"",
+	"keyword": [
+		"cordova", "device"
+	],
+	"platforms":[
+		"android"
+	],
+	"engines":[],
+	"englishdoc":""
+}
